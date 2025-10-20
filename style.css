@@ -1,0 +1,85 @@
+:root{
+    --bcg:#14141e;
+
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color:var(--bcg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scene{
+    height: 200px;
+    width: 200px;
+    perspective: 800px;
+}
+.cube{
+   
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    animation:rotation 12s linear  infinite;
+
+    
+}
+@keyframes rotation {
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+    
+}
+.face{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+
+    background-color: antiquewhite;
+    background: rgba(20,20,30,0.7);
+    border: 2px solid;
+    color:white;
+
+}
+.face_front{
+    transform: rotateY(0deg) translateZ(100px);
+    color: rgb(213, 161, 83);
+    
+}
+.face_back{
+    transform: rotateY(180deg) translateZ(100px);
+    color: rgb(131, 115, 202);
+    
+}
+.face_right{
+    transform: rotateY(90deg) translateZ(100px);
+    color: rgb(59, 22, 222);
+    
+}
+.face_left{
+    transform: rotateY(-90deg) translateZ(100px);
+    color: rgb(108, 231, 6);
+    
+}
+.face_up{
+    transform: rotateX(90deg) translateZ(100px);
+    color: rgb(118, 17, 59);
+    
+}
+.face_down{
+    transform: rotateX(-90deg) translateZ(100px);
+    color: rgb(252, 5, 5);
+
+}
+
+
